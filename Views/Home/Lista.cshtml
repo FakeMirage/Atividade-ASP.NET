@@ -1,0 +1,29 @@
+﻿@using TEste.Models;
+@model List<Cliente>;
+
+<h3>Lista de clientes</h3>
+<p>Quantidade cadastrada = @Model.Count</p>
+
+<table border="2">
+
+    <tr>
+        <th>NOME</th>
+        <th>IDADE</th>
+        <th>DATA NASC.</th>
+    </tr>
+
+
+    @foreach (var cliente in Model)
+    {
+        <tr>
+            <td>@cliente.nome</td>
+            @*<form asp-controller="Home" asp-action="Cliente">
+                <button type="submit">Salvar</button>
+            </form>*@
+            <td>@cliente.dataNascimento</td>
+            <td>@cliente.email</td>
+        </tr>
+    }
+
+
+</table>
